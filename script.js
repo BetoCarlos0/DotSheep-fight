@@ -13,7 +13,7 @@ canvas.height = 3438;
 
 
 let background = new Image();
-background.src = "./images/background.png";
+background.src = "images/background.png";
 
 
 background.onload = function(){
