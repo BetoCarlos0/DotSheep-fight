@@ -24,12 +24,14 @@ background.onload = function(){
     getIp();
 }
 
-
 async function getIp() {
     const response = await fetch(url);    
     const data = await response.json();
 
     if (data.ip == ipBeto){
         ctx.fillText("Beto", 370, 3295);
+    }
+    else if (data.ip == ipAmorzinho){
+        ctx.fillText("Amorzinho", 370, 3295);
     }
 }

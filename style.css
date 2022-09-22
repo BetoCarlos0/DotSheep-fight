@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Acme';
-    src: url('fonts/Acme/Acme-Regular.ttf') format('opentype');
+    src: url('fonts/Acme/Acme-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
