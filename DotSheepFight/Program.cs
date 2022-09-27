@@ -1,12 +1,7 @@
-﻿using DotSheepFight.Services;
+﻿using DotSheepFight.Hubs;
+using DotSheepFight.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
-
-// connection sql server
-//builder.Services.AddDbContext<DotSheepFightContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")
-//    ?? throw new InvalidOperationException("Connection string 'DotSheepFightContext' not found.")));
 
 // connection postgres sql
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<DotSheepFightContext>(options =>
@@ -14,6 +9,7 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<DotSheepFightContext>(o
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -38,4 +34,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapHub<GameHub>("/gameHub");
 app.Run();

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'TitanOne';
+  src: url('../fonts/TitanOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'TitanOne';
+}
 html {
   font-size: 14px;
 }
@@ -14,5 +27,71 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  height: 100vh;
+}
+
+.container-main {
+  background-image: url(../images/bg-home.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: 101%;
+  height: 100%;
+}
+
+/* ---------home------------ */
+.container-home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11vh;
+}
+
+.user-image {
+  background-image: url(../images/moldura.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 19vh;
+  width: 43.5vw;
+}
+
+.user-input {
+  background-image: url(../images/input.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 9vh;
+  width: 58vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-input input {
+  background-color: #ffdddd00;
+  height: 6vh;
+  width: 49vw;
+  color: white;
+  font-size: 11vw;
+  border-color: #ffdddd00;
+  caret-color: white;
+}
+.user-input input:focus {
+  border-color: #ffdddd00;
+  outline: none;
+}
+.forms {
+  margin-bottom: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+}
+.forms .btn {
+  background-image: url(../images/btn-confirm.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 7vh;
+  width: 16vw;
 }
