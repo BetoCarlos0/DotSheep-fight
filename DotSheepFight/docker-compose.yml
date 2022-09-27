@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  sheepfightlocal:
+    image: ${DOCKER_REGISTRY-}dotsheepfightlocal
+    build:
+      context: .
+      dockerfile: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=roberto123
+    volumes:
+      - D:\betoc\Documents\vs-projetos\GitHub\DotSheep-fight:/var/opt/mssql/data
+    ports:
+      - "1450:1433"

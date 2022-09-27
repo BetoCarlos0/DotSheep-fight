@@ -1,5 +1,3 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -18,6 +16,7 @@ RUN dotnet publish "DotSheepFight.csproj" -c Release -o /app/publish /p:UseAppHo
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# ENTRYPOINT ["dotnet", "DotSheepFight.dll"]
 
-CMD ASPNETCORE_URLS="http://*:$PORT" dotnet DotSheepFight.dll;
+ENTRYPOINT ["dotnet", "DotSheepFight.dll"]
+
+#CMD ASPNETCORE_URLS="http://*:$PORT" dotnet DotSheepFight.dll;
