@@ -19,4 +19,4 @@ COPY --from=publish /app/publish .
 
 ENTRYPOINT ["dotnet", "DotSheepFight.dll"]
 
-#CMD ASPNETCORE_URLS="http://*:$PORT" dotnet DotSheepFight.dll;
+# CMD ASPNETCORE_URLS="http://*:$PORT" dotnet DotSheepFight.dll;

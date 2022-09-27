@@ -1,5 +1,5 @@
 version: '3.4'
-
+container_name: sheepfightlocal
 services:
   sheepfightlocal:
     image: ${DOCKER_REGISTRY-}dotsheepfightlocal
@@ -12,7 +12,7 @@ services:
       - sqlserver
 
   sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: postgres
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=roberto123
