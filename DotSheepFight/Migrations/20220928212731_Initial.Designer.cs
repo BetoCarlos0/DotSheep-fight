@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DotSheepFight.Migrations
 {
     [DbContext(typeof(DotSheepFightContext))]
-    [Migration("20220927120040_Initial")]
+    [Migration("20220928212731_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,8 +30,13 @@ namespace DotSheepFight.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
 
+                    b.Property<string>("Device")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FotoUrl")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("UserId");

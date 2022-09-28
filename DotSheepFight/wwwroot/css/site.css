@@ -26,72 +26,129 @@ html {
   min-height: 100%;
 }
 
-body {
+.container-main {
   height: 100vh;
 }
 
-.container-main {
-  background-image: url(../images/bg-home.png);
+/* ---------home------------ */
+
+.container-home {
+  background-image: url("../images/bg-home.png");
   background-repeat: no-repeat;
   background-position-y: center;
   background-size: 101%;
-  height: 100%;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* ---------home------------ */
-.container-home {
+.imagem {
+  position: relative;
+}
+
+.imagem img {
+  margin-bottom: 8px;
+  width: 26.5vw;
+}
+.close-preview {
+  font-size: 13vw;
+  position: absolute;
+  right: -48px;
+  bottom: -42%;
+  color: #fff;
+  text-shadow: 0 0 22px #000;
+}
+
+#new {
+  position: absolute;
+  width: 27vw;
+  height: 27vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  z-index: 2;
+  display: none;
+  background-position: center center;
+}
+
+.editar-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9;
+  text-align: center;
   height: 100%;
+  vertical-align: middle;
+  display: table;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.forms {
+  height: 100%;
+  width: 85%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 11vh;
+  justify-content: center;
+  position: relative;
+  gap: 8%;
+  margin: 0 auto;
 }
 
 .user-image {
-  background-image: url(../images/moldura.png);
+  background-image: url("../images/moldura.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  height: 19vh;
-  width: 43.5vw;
-}
+  background-size: 38% 99%;
+  height: 15%;
 
-.user-input {
-  background-image: url(../images/input.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 9vh;
-  width: 58vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.user-input input {
-  background-color: #ffdddd00;
-  height: 6vh;
-  width: 49vw;
-  color: white;
-  font-size: 11vw;
-  border-color: #ffdddd00;
-  caret-color: white;
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 8%;
 }
-.user-input input:focus {
+
+.forms .btn-confirm {
+  background-image: url("../images/btn-confirm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 17%;
+  background-color: #ffdddd00;
   border-color: #ffdddd00;
   outline: none;
 }
-.forms {
-  margin-bottom: 20vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2vw;
-}
-.forms .btn {
-  background-image: url(../images/btn-confirm.png);
+
+.user-input {
+  background-image: url("../images/input.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 7vh;
-  width: 16vw;
+  background-position: center;
+  background-size: contain;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-input input {
+  background-color: #ffdddd00;
+  width: 60%;
+  height: 90px;
+  color: white;
+  font-size: 8vw;
+  border-color: #ffdddd00;
+  caret-color: white;
+}
+
+.user-input input:focus {
+  border-color: #ffdddd00;
+  outline: none;
 }

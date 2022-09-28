@@ -15,7 +15,9 @@ namespace DotSheepFight.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Device = table.Column<string>(type: "text", nullable: true),
+                    FotoUrl = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
