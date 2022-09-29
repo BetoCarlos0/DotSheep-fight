@@ -1,5 +1,6 @@
 ﻿using DotSheepFight.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq.Expressions;
 
@@ -21,20 +22,18 @@ namespace DotSheepFight.Controllers
         public IActionResult Index()
         {
             var user = new User();
-            //if (HttpContext.Request.Headers["User-Agent"]) ;
             return View(user);
         }
 
         [HttpGet]
-        public User GetUserAgent(string userAgent)
+        public async Task<IActionResult> GetUserAgent(string userAgent)
         {
-            var user = new User();
-            return user;
+            var user = 5;
+            return Ok(await _context.Users.FindAsync(user));
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId, Name, Foto")] User user)
+        public async Task<IActionResult> Create([Bind("UserId, Name, Device, Foto")] User user)
         {
             if (!ValidaImagem(user.Foto))
                 return View(user);
@@ -44,7 +43,8 @@ namespace DotSheepFight.Controllers
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index));
+            return Ok();
+            //return RedirectToAction(nameof(Index));
         }
 
         private bool ValidaImagem(IFormFile formFile)

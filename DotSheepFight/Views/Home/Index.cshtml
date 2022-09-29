@@ -35,7 +35,7 @@
 </div>
 
 
-<form class="forms" asp-action="Create" enctype="multipart/form-data">
+<form id="form" class="forms" enctype="multipart/form-data">
     <div class="user-image">
         <div class="imagem">
             <div class="editar-content"></div>
@@ -47,12 +47,14 @@
             <img src="~/images/user2.png"/>
         </div>
 
-        <input style="display: none;" id="file-preview-js" class="upd-img" asp-for="Foto" type="file" onchange="loaderFile(event)" />
+        <input style="display: none;" id="foto" class="upd-img" type="file" onchange="loaderFile(event)" />
     </div>
     <div class="form-group">
         <div class="user-input">
-            <input asp-for="Name" type="text" />
+            <input id="name" type="text" />
         </div>
-        <input class="btn-confirm" type="submit" value=""/>
+        <button class="btn-confirm" /></button>
     </div>
+
+    <div id="message"></div>
 </form>

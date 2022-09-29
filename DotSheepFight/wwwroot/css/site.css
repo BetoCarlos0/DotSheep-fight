@@ -44,27 +44,32 @@ html {
 
 .imagem {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imagem img {
-  margin-bottom: 8px;
-  width: 26.5vw;
+  margin-bottom: 3px;
+  width: 30vw;
+  padding: 2.4vw;
 }
 .close-preview {
   font-size: 13vw;
   position: absolute;
-  right: -48px;
+  right: -7vw;
   bottom: -42%;
   color: #fff;
   text-shadow: 0 0 22px #000;
+  cursor: pointer;
 }
 
 #new {
   position: absolute;
-  width: 27vw;
-  height: 27vw;
+  width: 25.5vw;
+  height: 25.5vw;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 100%;
   z-index: 2;
   display: none;
@@ -101,8 +106,7 @@ html {
   background-image: url("../images/moldura.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 38% 99%;
-  height: 15%;
+  background-size: contain;
 
   display: flex;
   justify-content: center;
@@ -113,7 +117,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 8%;
+  height: 14vw;
 }
 
 .forms .btn-confirm {
@@ -121,7 +125,7 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 17%;
+  width: 15vw;
   background-color: #ffdddd00;
   border-color: #ffdddd00;
   outline: none;
@@ -132,7 +136,7 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 80%;
+  width: 44vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,10 +144,10 @@ html {
 
 .user-input input {
   background-color: #ffdddd00;
-  width: 60%;
-  height: 90px;
+  width: 33vw;
+  height: 9vw;
   color: white;
-  font-size: 8vw;
+  font-size: 6vw;
   border-color: #ffdddd00;
   caret-color: white;
 }
